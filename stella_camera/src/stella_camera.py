@@ -26,6 +26,7 @@ if __name__=="__main__":
                 rospy.loginfo("Not Found Devices")
                 break
             frame = cv2.flip(frame,0)
+            frame = cv2.flip(frame,1)
             image_msg = bridge.cv2_to_imgmsg(frame,"bgr8")
             pub.publish(image_msg)
             rate.sleep()
